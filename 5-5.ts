@@ -1,17 +1,10 @@
-interface Id {
-  id: string
-}
-
 interface Product extends Id {
   name: string;
   price: number;
 }
 
-interface User extends Id {
-  username: string;
-  email: string;
-  createdAt: Date;
-  updatedAt: Date;
+interface Id {
+  id: string
 }
 
 type TimeStamp = {
@@ -25,11 +18,29 @@ type Review = Id & TimeStamp & {
   content: string;
 }
 
+interface User extends Id {
+  username: string;
+  email: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
 const review: Review = {
   id: 'r-001',
   content: '좋아요',
   productId: 'c-001',
   userId: 'u-001',
+  createdAt: new Date(),
+  updatedAt: new Date(),
+}
+
+const user: User = {
+  id: 'u-001',
+  email: 'a@a.com',
+  name: '홍길동',
+  phoneNo: '---',
+  username: '홍길동',
+  cart: [],
   createdAt: new Date(),
   updatedAt: new Date(),
 }

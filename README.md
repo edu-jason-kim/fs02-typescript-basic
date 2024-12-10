@@ -80,3 +80,33 @@ interface User {
 - 타입에 대한 'and' 연산
 - 객체의 intersection 타입의 경우 모든 객체의 property에 대해서 참조 가능
 - `A & B`
+
+## keyof
+- 객체형태의 타입의 key를 union타입으로 반환하는 타입스크립트 연산자
+```typescript
+interface Product {
+  id: string;
+  name: string;
+  price: number;
+  salePrice: number;
+  memberOnly?: boolean;
+}
+
+type ProductProperty = keyof Product
+```
+
+## typeof
+```typescript
+// TS 연산으로 활용: 특정 값의 타입을 그대로 가져올 때
+let b: typeof productA; // Product type
+
+// JS 연산으로 활용: 특정 값의 타입에 대한 expression
+typeof ''       // 'string'
+typeof 1        // 'number'
+typeof false    // 'boolean'
+typeof {}       // 'object'
+typeof productA // 'object'
+```
+
+## Generic
+타입을 파라미터화하여 사용하는 방법

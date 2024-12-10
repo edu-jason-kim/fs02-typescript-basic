@@ -6,6 +6,7 @@ enum ClothingSize {
 }
 
 type ShoeSize = 220 | 230 | 240 | 250 | 260 | 270
+type ShoeSize2 = `${1 | 2}${2 | 3 | 4 | 5 | 6 | 7 | 8 | 9}0`
 
 console.log(Object.keys(ClothingSize))
 
